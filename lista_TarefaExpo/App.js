@@ -1,12 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
+import Topo from './src/componentes/Topo';
+import Lista from './src/componentes/Lista';
+
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+      <Topo />
+      <View>
+        <Lista />
+      </View>
+    </>
   );
 }
 

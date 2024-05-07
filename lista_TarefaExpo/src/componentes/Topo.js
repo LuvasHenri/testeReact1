@@ -1,6 +1,6 @@
 import { View, Image } from "react-native";
 
-import Logo from '../..assets/lista.png';
+import Logo from '../../assets/tarefas/Logolista';
 import { setStatusBarBackgroundColor } from "expo-status-bar";
 
 export default function Topo(){
