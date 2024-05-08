@@ -1,68 +1,62 @@
-import { FlatList, View, StyleSheet, Text} from "react-native";
+import { FlatList, StyleSheet, Text, View, Image } from 'react-native';
 
-import tarefas from "../../src/mocks/Tarefas";
+import tarefas from '../mocks/Tarefas';
 
-export default function Lista(){
+export default function App() {
+
+  const renderizarItem = ({ item }) => (
     
-    const renderizar = ({item}) =>{
-    <View style={estilo.item}>
-        <View style={estilo.TituloImagem}>
-                <Image source={item.imagem } style={estilo.imagem}/>
-                <Text style={estilo.titulo}>{item.imagem}</Text>
-            </View>
-            <Text style={estilo.info}>{item.descricao}</Text>
-        </View>
-    }
-    return(
-        <View style={estilo.container}>
-            <FlatList
-                data={tarefas}
-                renderItem={renderizar}
-                heyExtractor={item => item.id}
-            />
-        </View>
-    )
-};
+    <View style={estilos.item}>
+      <View style={estilos.tituloImagem}>
+        <Image style={estilos.imagem} source={item.imagem}/>
+        <Text style={estilos.titulo}>{item.nome}</Text>
+      </View> 
+      <Text style={estilos.info}>{item.descricao}</Text>
+    </View>
+  );
 
-
-const estilo = StyleSheet.create(
-    {
-    container:{
-        flex: 1,
-        backgroundColor: '#f3f3',
-        justifyContent: 'center',
-        margin:10,
-        marginTop:15,
-        
-    },
-
-    item:{
-        backgroundColor:'#9bf2ea',
-        padding:20,
-        marginTop:5,
-        marginVertical:8,
-        borderRadiu:10,
-
-    },
-
-    titulo:{
-        FontSize:24,
-        marginLeft:10
-    },
-
-    tituloimagem:{
-        flexDirection: 'row'
-    },
-
-    info:{
-      flexDirection: 'column',
-      FontSize:16,
-    },
-
-    imagem:{
-        width:40,
-        height:40,
-    }
+  return (
+    <View style={estilos.container}>
+      <FlatList
+        data={tarefas}//dados que vão preencher a lista
+        renderItem={renderizarItem}
+        keyExtractor={item => item.nome}
+      />
+    </View>
+  );
 }
 
-);
+const estilos = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+   justifyContent: 'center',
+   margin: 10,
+   marginTop: 15
+  },
+  item:{
+    backgroundColor: '#9BF2EA',
+    padding: 20,
+    marginTop: 5,
+    marginVertical: 8,
+    borderRadius: 10,
+  },
+  titulo: {
+    fontSize: 24,
+    marginLeft: 10,
+  },
+  tituloImagem: {
+    flexDirection: 'row',
+  },
+  info: {
+    flexDirection: 'column',
+    fontSize: 16,
+  },
+  imagem: {
+    width: 40,
+    height: 40,
+  }
+});
+
+
+

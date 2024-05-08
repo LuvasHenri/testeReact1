@@ -16,13 +16,13 @@ const tarefas = [
         id: 2,
         nome: "Tomar água",
         imagem: copo,
-        descricao: "Tomar 200 ml de água de 1h em 1h."
+        descricao: "Tomar 200ml de água de 1h em 1h."
     },
     {
         id: 3,
         nome: "Passear com o doguinho",
         imagem: dog,
-        descricao: "Passear com o Alfredo todo dia às 19h."
+        descricao: "Passear com o Alfredo todo dia as 19h."
     },
     {
         id: 4,
@@ -34,7 +34,7 @@ const tarefas = [
         id: 5,
         nome: "Preparar marmitas",
         imagem: quentinha,
-        descricao: "Preparar o rango todos os dias para adiantar o dia depois de hoje."
+        descricao: "Preparar o rango todos os dias pra adiantar o dia depois de hoje."
     }
 ];
 
